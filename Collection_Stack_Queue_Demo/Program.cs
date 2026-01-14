@@ -1,34 +1,19 @@
-﻿using System;
-using System.Collections;
+﻿// See https://aka.ms/new-console-template for more information
+using System.Collections.Generic;
+using System;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Collection_Stack_Queue_Demo
+class Program
 {
-    internal class Program
+       static void Main(string[] args)
     {
-        static void Main(string[] args)
-
-        {//creating 
-            Stack stack = new Stack();
-            stack.Push(10);
-            stack.Push(20);
-            stack.Push(30);
-            //pop a value 
-            object popValue = stack.Pop();
-            Console.WriteLine("Popped Value:" + popValue);
-            //peek a value
-            object peekValue = stack.Peek();
-            Console.WriteLine("Peek Value:" + peekValue);
-            //search a value in stack
-            bool searchValue = stack.Contains(20);
-            Console.WriteLine("Search Value:" + searchValue);
-            //count of a stack
-            Console.WriteLine("Current stack count: " + stack.Count);
-            //clearing a stack
-            stack.Clear();
-            Console.WriteLine("Stack cleared. stack count after clearing:"+stack.Count);
+        List<int> numbers = new List<int> { 2,5,1,8,4,10,23,56,93 };
+        // Using a lambda expression to filter even numbers
+        var evenNumbers = numbers.Where(n => n % 2 == 0);
+        Console.WriteLine("Even Numbers in the List:");
+        foreach (var number in evenNumbers)
+        {
+            Console.WriteLine(number);
         }
     }
+
 }
